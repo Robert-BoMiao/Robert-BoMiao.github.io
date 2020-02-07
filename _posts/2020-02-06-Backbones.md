@@ -8,5 +8,5 @@ tags:
 ---
 
 2012. AlexNet
-![AlexNet architecture](https://github.com/Robert-BoMiao/Robert-BoMiao.github.io/blob/master/images/blog_images/alexnet.png)
+![AlexNet architecture](https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/alexnet.png)
 
