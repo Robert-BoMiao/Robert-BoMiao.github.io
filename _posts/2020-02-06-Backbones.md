@@ -72,10 +72,3 @@ This work introduced dense block. In a dense block, the later layers have identi
 <img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/densenet.png" width="600" alt="DenseNet architecture">
 
 
-
-
-
-
-
-
-
