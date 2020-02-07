@@ -1,7 +1,7 @@
 ---
 title: 'Object detection in computer vision'
 date: 2020-02-07
-permalink: /posts/2020/0207/blog-post-01/
+permalink: /posts/2020/02/blog-post-02/
 tags:
   - Computer Vision
   - Object Detection
