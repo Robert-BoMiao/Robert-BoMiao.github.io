@@ -1,7 +1,7 @@
 ---
 title: 'Backbones in computer vision'
 date: 2020-02-06
-permalink: /posts/2012/08/blog-post-4/
+permalink: /posts/2020/0206/blog-post-1/
 tags:
   - Computer Vision
   - Backbone
