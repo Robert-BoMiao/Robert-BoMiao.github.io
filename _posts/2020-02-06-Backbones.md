@@ -39,7 +39,7 @@ In this work, the authors introduced asymmetric convoltions, which means a 3\*3 
 
 In this work, the authors introduced Inception into ResNet architecture as shown below.
 
-![InceptionV4 Architecture](https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/inceptionv4.png)
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/inceptionv4.png" width="600" alt="InceptionV4 Architecture">
 
 2015\. VGG
 
@@ -47,30 +47,29 @@ In this work, small convolutional sizes such as 3\*3 and 5\*5 were used to learn
 
 This network has too many parameters (138M).
 
-![VGG16 Architecture](https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/vgg.png)
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/vgg.png" width="600" alt="VGG16 Architecture">
 
 2016\. ResNet
 
 This work used a deep network with residual bottlenecks to solve the gradient vanishing and explorsion problem and network degradation issue.
 
-![ResNet Block](https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/resnet2.png)
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/resnet2.png" width="400" alt="ResNet Block">
 
-![ResNet Block at Pooling](https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/resnet1.png)
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/resnet1.png" width="400" alt="ResNet Block at Pooling">
 
 2016\. Identity mapping
 
 Based on the work of resnet, this work achieved indentity mapping using a new block, which means signal can be transformed between any layer.
 
-![ResNet with identity mapping](https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/identitymapping1.png)
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/identitymapping1.png" width="400" alt="ResNet with identity mapping">
 
-![Differentiation of identity mapping](https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/identitymapping2.png)
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/identitymapping2.png" width="400" alt="Differentiation of identity mapping">
 
 2017\. DenseNet
 
 This work introduced dense block. In a dense block, the later layers have identity mapping with all the previous layer, and the multi-layer's features were combined by concatenating them.
 
-![DenseNet architecture](https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/densenet.png)
-
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/densenet.png" width="600" alt="DenseNet architecture">
 
 
 
