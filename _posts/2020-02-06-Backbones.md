@@ -9,5 +9,5 @@ tags:
 ---
 
 2012. AlexNet
-![674f8a328f08378e65505eb02f4d2c96.png](en-resource://database/2363:1)
+![Alexnet Architecture](https://github.com/Robert-BoMiao/Robert-BoMiao.github.io/images/blog_images/alexnet.png)
 
