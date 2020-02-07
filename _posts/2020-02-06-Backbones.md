@@ -39,7 +39,7 @@ In this work, the authors introduced asymmetric convoltions, which means a 3\*3 
 
 In this work, the authors introduced Inception into ResNet architecture as shown below.
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/inceptionv4.png" width="600" alt="InceptionV4 Architecture">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/inceptionv4.png" width="300" alt="InceptionV4 Architecture">
 
 2015\. VGG
 
