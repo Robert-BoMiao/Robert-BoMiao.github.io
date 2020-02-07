@@ -11,7 +11,7 @@ Before 2013\. Traditional
 
 Including VJ, HOG, DPM, SIFT, et al.
 
-#### General Parameters
+# General Parameters
 
 Scale jittering, rotation for data augmentation;
 
@@ -36,9 +36,9 @@ Non maximum suppression (NMS) for removing highly overlapped proposals;
 
 
 
-### Two Stage
+# Two Stage
 
-2013\. R-CNN
+**2013\. R-CNN**
 
 **Highlight: Selective search && Pre-training**
 
@@ -52,7 +52,7 @@ After that, warping was used to normalize the size of proposals. Then, each norm
 
 <img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/rcnn.png" width="600" alt="rcnn">
 
-2014\. SPPNet
+**2014\. SPPNet**
 
 **Highlight: SPP layer (ROI Pooling)**
 
@@ -64,11 +64,11 @@ In SPP layer, if we want to project a M\*N feature map into a 4\*4 feature map, 
 
 <img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/spp2.png" width="600" alt="spp2">
 
-2015\. Fast R-CNN
+**2015\. Fast R-CNN**
 
 **Highlight: Multi-task loss**
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/fastrcnn.png" width="300" alt="fastrcnn1">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/fastrcnn1.png" width="300" alt="fastrcnn1">
 
 In that work, the authors make a little change on the process and the feature map of whole image only need to be calculated once. 
 
@@ -76,7 +76,7 @@ In reference, the image was fed into selective search algorithm and VGG backbone
 
 <img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/fastrcnn.png" width="600" alt="fastrcnn">
 
-2015\. Faster R-CNN
+**2015\. Faster R-CNN**
 
 **Highlight: Region proposal network**
 
@@ -88,7 +88,7 @@ In inference, the image firstly fed into VGG to get the feature map. Then, propo
 
 <img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/fasterrcnn1.png" width="400" alt="fasterrcnn1">
 
-2016\. OHEM
+**2016\. OHEM**
 
 **Highlight: Hard negative mining**
 
