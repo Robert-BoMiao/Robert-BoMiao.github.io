@@ -39,7 +39,7 @@ In this work, the authors introduced asymmetric convoltions, which means a 3\*3 
 
 In this work, the authors introduced Inception into ResNet architecture as shown below.
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/inceptionv4.png" width="300" alt="InceptionV4 Architecture">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/inceptionv4.png" width="200" alt="InceptionV4 Architecture">
 
 **2015\. VGG**
 
@@ -53,15 +53,15 @@ This network has too many parameters (138M).
 
 This work used a deep network with residual bottlenecks to solve the gradient vanishing and explorsion problem and network degradation issue.
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/resnet2.png" width="400" alt="ResNet Block">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/resnet2.png" width="300" alt="ResNet Block">
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/resnet1.png" width="400" alt="ResNet Block at Pooling">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/resnet1.png" width="500" alt="ResNet Block at Pooling">
 
 **2016\. Identity mapping**
 
 Based on the work of resnet, this work achieved indentity mapping using a new block, which means signal can be transformed between any layer.
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/identitymapping1.png" width="400" alt="ResNet with identity mapping">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/identitymapping1.png" width="300" alt="ResNet with identity mapping">
 
 <img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/identitymapping2.png" width="400" alt="Differentiation of identity mapping">
 
