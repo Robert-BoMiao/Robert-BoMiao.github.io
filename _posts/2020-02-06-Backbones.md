@@ -8,6 +8,11 @@ tags:
 ---
 
 2012\. AlexNet
+
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/alexnet.png" width="800" alt="AlexNet architecture">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/alexnet.png" width="600" alt="AlexNet architecture">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/alexnet.png" width="400" alt="AlexNet architecture">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/alexnet.png" width="200" alt="AlexNet architecture">
 ![AlexNet architecture](https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/alexnet.png)
 
 2015\. InceptionV1 (GoogLeNet)
@@ -15,39 +20,57 @@ tags:
 In this work, convolutional layers were used to extract feature maps. Therefore, the number of parameters is obviously reduced compare with previous architectures. Moreover, this work proposed Inception module that can parallelly calulate multi-scale features, and auxiliary classifiers were used to increase the gradient signal and provide additional regularization.
 
 ![InceptionV1 block](https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/inceptionv12.png)
+
 ![InceptionV1 Architecture](https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/inceptionv11.png)
 
 2015\. InceptionV2
+
 In this work, the authors firstly point out gradient vanishing and explorsion problems and Internal Covariate Shift. Then, they used batch normalization to solve these problems and obtained good results.
+
 The process of batch normalization is shown as below. The distribution of weight of each layer was firstly changed to standard normal distribution using the each layer's weight of all samples in each batch, then γ and β were used to stretch the normalized distribution in order to keep the nonlinear learning ability. In convolutional layers, each feature map has one mean and variance, which means a feature map (N sample, C channel, W\*H size) will have C mean values and C variance values.
+
 In the reference step, mean and variance were calculated using all samples in the training set.
 
 ![InceptionV2 Architecture](https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/inceptionv11.png)
 
 2015\. InceptionV3
+
 In this work, the authors introduced asymmetric convoltions, which means a 3\*3 filter could be replaced by one 3\*1 filter and one 1\*3 filter.
 
 2016\. InceptionV4
+
 In this work, the authors introduced Inception into ResNet architecture as shown below.
+
 ![InceptionV4 Architecture](https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/inceptionv4.png)
 
 2015\. VGG
+
 In this work, small convolutional sizes such as 3\*3 and 5\*5 were used to learn high level features. This work used a deep network to improve network's learning ability.
+
 This network has too many parameters (138M).
+
 ![VGG16 Architecture](https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/vgg.png)
 
 2016\. ResNet
+
 This work used a deep network with residual bottlenecks to solve the gradient vanishing and explorsion problem and network degradation issue.
+
 ![ResNet Block](https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/resnet2.png)
+
 ![ResNet Block at Pooling](https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/resnet1.png)
 
 2016\. Identity mapping
+
 Based on the work of resnet, this work achieved indentity mapping using a new block, which means signal can be transformed between any layer.
+
 ![ResNet with identity mapping](https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/identitymapping1.png)
+
 ![Differentiation of identity mapping](https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/identitymapping2.png)
 
 2017\. DenseNet
+
 This work introduced dense block. In a dense block, the later layers have identity mapping with all the previous layer, and the multi-layer's features were combined by concatenating them.
+
 ![DenseNet architecture](https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/densenet.png)
 
 
