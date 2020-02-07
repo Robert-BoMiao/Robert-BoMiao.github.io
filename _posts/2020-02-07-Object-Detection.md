@@ -142,11 +142,11 @@ Moreover, the network is also used for instance segmentation problem, the result
 
 That work mainly focus on the optimization of detection head. The authors found that the detection performance tends to degrade with the increase of threshold. That phenomenon maybe caused by the different thresholds between traning and test. In that case, cascade block can solve this problem. 
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/cascadercnn1.png" width="600" alt="cascadercnn1">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/cascadercnn1.png" width="400" alt="cascadercnn1">
 
 After each prediction the model will be more confident to the positive samples. Therefore, cascade block with different threshold will have similiar sample distribution because the 2nd stage with higher threshold will receive samples with higher confidence. During reference, the model is thus more robust to different thresholds.
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/cascadercnn.png" width="600" alt="cascadercnn">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/cascadercnn.png" width="400" alt="cascadercnn">
 
 
 # One Stage
