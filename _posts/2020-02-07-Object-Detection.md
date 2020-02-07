@@ -50,7 +50,7 @@ This is a milestone in object detection. In that work, proposals was firstly bee
 
 After that, warping was used to normalize the size of proposals. Then, each normalized proposal was fed into AlexNet in order to get the proposal's category and location. Finally, non maximum suppression was used to remove the highly overlapped proposals. The framework of R-CNN is shown as below.
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/rcnn.png" width="600" alt="rcnn">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/rcnn.png" width="500" alt="rcnn">
 
 **2014\. SPPNet**
 
@@ -62,7 +62,7 @@ In SPP layer, if we want to project a M\*N feature map into a 4\*4 feature map, 
 
 <img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/spp1.png" width="400" alt="spp1">
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/spp2.png" width="600" alt="spp2">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/spp2.png" width="400" alt="spp2">
 
 **2015\. Fast R-CNN**
 
@@ -74,7 +74,7 @@ In that work, the authors make a little change on the process and the feature ma
 
 In reference, the image was fed into selective search algorithm and VGG backbone simultaneously. Then, the proposals from the raw image were projected into the feature map, and ROI Pooling was used to project the feature maps of proposals into a fixed size. Finally, two fully connected layers were used to extract the feature vectors from proposals, and one fully connected layer plus a softmax layer or a regression layer were used to classify and localize the proposals.
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/fastrcnn.png" width="600" alt="fastrcnn">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/fastrcnn.png" width="500" alt="fastrcnn">
 
 **2015\. Faster R-CNN**
 
@@ -86,7 +86,7 @@ In that work, the authors used region proposal network (RPN) to replace the sele
 
 In inference, the image firstly fed into VGG to get the feature map. Then, proposals were calculated by feeding feature map into RPN network. After that, each proposal was resized into a fixed size using ROI Pooling, and fully connected layers were used for classification and localization.
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/fasterrcnn1.png" width="400" alt="fasterrcnn1">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/fasterrcnn1.png" width="300" alt="fasterrcnn1">
 
 **2016\. OHEM**
 
@@ -104,7 +104,7 @@ In that work, the authors proposed a totally convolutional network. After featur
 
 The proposal sensitive score map has k\*k\*(C+1) channels. In that work, the author define k=9, which means the proposal could be divided into 9 parts (top-left, top-right, etc.). After proposals (calculated by RPN) project into the score map, the proposals will be divided into k identical parts, and the top-left parts will select the corrosponding C+1 channel features at the top-left and change them into a 1\*1\*(C+1) feature map using pooling. Then, a k\*k\*(C+1) feature map will be obtained, and after another pooling, the C+1 dimentional feature vector will be fed into softmax and calculate the results.
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/rfcn1.png" width="600" alt="rfcn">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/rfcn1.png" width="500" alt="rfcn">
 
 **2017\. Light Head R-CNN**
 
@@ -122,7 +122,7 @@ In that work, the authors proposed a feature pyramid network. That method is bas
 
 During inference, feature maps with different sizes were firstly calculated, then the bottom layer will merge the information of higher layers. Finally, RPN and detection head of other methods could be used for detection.
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/fpn.png" width="600" alt="fpn">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/fpn.png" width="500" alt="fpn">
 
 **2017\. Mask R-CNN**
 
@@ -134,7 +134,7 @@ In that work, the author proposed ROI Alignment to solve the misalignment issue 
 
 Moreover, the network is also used for instance segmentation problem, the results shown that optimize the loss of mask prediction can also improve the detection accuracy.
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/maskrcnn1.png" width="600" alt="maskrcnn1">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/maskrcnn1.png" width="500" alt="maskrcnn1">
 
 **2018\. Cascade R-CNN**
 
@@ -142,7 +142,7 @@ Moreover, the network is also used for instance segmentation problem, the result
 
 That work mainly focus on the optimization of detection head. The authors found that the detection performance tends to degrade with the increase of threshold. That phenomenon maybe caused by the different thresholds between traning and test. In that case, cascade block can solve this problem. 
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/cascadercnn1.png" width="600" alt="cascadercnn">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/cascadercnn1.png" width="600" alt="cascadercnn1">
 
 After each prediction the model will be more confident to the positive samples. Therefore, cascade block with different threshold will have similiar sample distribution because the 2nd stage with higher threshold will receive samples with higher confidence. During reference, the model is thus more robust to different thresholds.
 
@@ -189,7 +189,7 @@ The authors found that its complex to select hard samples based on mannual rules
 
 The folcal loss is calculated as below:
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/focalloss.png" width="300" alt="focalloss">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/focalloss.png" width="200" alt="focalloss">
 
 α could decide the importance of positive samples, and γ could decide the decay speed of the weight with the increase of confidence.
 
@@ -209,9 +209,9 @@ Instead of rudely removing highly overlapped proposals, Soft NMS choose the prop
 
 This work is based on the visual principle of Biology. After Combining Inception block with dilated convolution, the recptive field that obey the visual principle was obtained. Then, detection was finished using multi-scale feature maps.
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/rfbnet.png" width="300" alt="rfbnet">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/rfbnet.png" width="400" alt="rfbnet">
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/rfbnet1.png" width="300" alt="rfbnet1">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/rfbnet1.png" width="400" alt="rfbnet1">
 
 **2019\. M2Det**
 
@@ -219,7 +219,7 @@ This work is based on the visual principle of Biology. After Combining Inception
 
 The authors aims to let the model learn both multi-level and multi-scale features. In this method, images was firstly fed into a backbone, and two of all feature maps will concatenate into one feature map I. Then I was fed into TUM that like a feature pyramid network. After that, the low-level multi-scale feature maps were obtained. Then, the feature map O with highest resolution was choosen from the low-level multi-scale feature maps. I and O were then concatenated into one feature map through FFM2 and fed into the next TUM. Finally, low&mid&high-level multi-scale feature maps could be obtained, feature maps with same scale will concatenate with each other, and the feature maps were reweighted using the mean value of each channel.
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/m2det.png" width="300" alt="m2det">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/m2det.png" width="600" alt="m2det">
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/m2det1.png" width="300" alt="m2det1">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/m2det1.png" width="600" alt="m2det1">
 
