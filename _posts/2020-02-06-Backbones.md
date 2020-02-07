@@ -9,19 +9,17 @@ tags:
 
 2012\. AlexNet
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/alexnet.png" width="800" alt="AlexNet architecture">
 <img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/alexnet.png" width="600" alt="AlexNet architecture">
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/alexnet.png" width="400" alt="AlexNet architecture">
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/alexnet.png" width="200" alt="AlexNet architecture">
-![AlexNet architecture](https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/alexnet.png)
+<!-- ![AlexNet architecture](https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/alexnet.png)
+ -->
 
 2015\. InceptionV1 (GoogLeNet)
 
 In this work, convolutional layers were used to extract feature maps. Therefore, the number of parameters is obviously reduced compare with previous architectures. Moreover, this work proposed Inception module that can parallelly calulate multi-scale features, and auxiliary classifiers were used to increase the gradient signal and provide additional regularization.
 
-![InceptionV1 block](https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/inceptionv12.png)
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/inceptionv12.png" width="400" alt="InceptionV1 block">
 
-![InceptionV1 Architecture](https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/inceptionv11.png)
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/inceptionv11.png" width="600" alt="InceptionV1 Architecture">
 
 2015\. InceptionV2
 
@@ -31,7 +29,7 @@ The process of batch normalization is shown as below. The distribution of weight
 
 In the reference step, mean and variance were calculated using all samples in the training set.
 
-![InceptionV2 Architecture](https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/inceptionv11.png)
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/inceptionv2.png" width="400" alt="Batch normalization">
 
 2015\. InceptionV3
 
