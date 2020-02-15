@@ -23,26 +23,26 @@ The work used history memory and current input to calculate current output.
 
 **1997\. LSTM**
 
-On the basis of RNN, LSTM introduced several gates based on sigmoid function to control the information transform.
+On the basis of RNN, LSTM introduced several gates that based on sigmoid function to control the information transform.
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/lstm.png" width="300" alt="LSTM architecture">
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/lstm1.png" width="100" alt="LSTM architecture">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/lstm.png" width="400" alt="LSTM architecture">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/lstm1.png" width="300" alt="LSTM architecture">
 
 The following one is forget gate, it controls the amount of passed history memory λCt-1.
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/lstm2.png" width="100" alt="LSTM architecture">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/lstm2.png" width="400" alt="LSTM architecture">
 
 The following one is input gate, it demetermines the current state input information Pt.
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/lstm3.png" width="100" alt="LSTM architecture">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/lstm3.png" width="400" alt="LSTM architecture">
 
 The following one is memory gate, the passed history memory λCt-1 plus the current state input information Pt formed the current memory Ct.
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/lstm4.png" width="100" alt="LSTM architecture">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/lstm4.png" width="400" alt="LSTM architecture">
 
 The following one is the unit output Ht, it was formed based on the passed activation (tanh) of current memory Ct.
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/lstm5.png" width="100" alt="LSTM architecture">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/lstm5.png" width="400" alt="LSTM architecture">
 
 **2015\. VGG**
 
@@ -84,7 +84,7 @@ The work, the authors introduced Inception into ResNet architecture as shown bel
 
 The work used a deep network with residual bottlenecks to solve the gradient vanishing and explorsion problem and network degradation issue.
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/resnet2.png" width="300" alt="ResNet Block">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/resnet2.png" width="200" alt="ResNet Block">
 
 <img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/resnet1.png" width="500" alt="ResNet Block at Pooling">
 
@@ -108,7 +108,7 @@ The work proposed an extra dimention called cardinality, which means the block c
 
 <img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/groupconvolution.png" width="300" alt="Group Convolution">
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/resnext.png" width="300" alt="ResNeXt architecture">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/resnext.png" width="500" alt="ResNeXt architecture">
 
 **2017\. Xception**
 
@@ -116,15 +116,15 @@ The work used **Depthwise Separable Convolution** to construct the model, and it
 
 <img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/dsc.png" width="300" alt="Depthwise Separable Convolution">
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/xception.png" width="400" alt="xception architecture">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/xception.png" width="600" alt="xception architecture">
 
 **2017\. SENet**
 
 SENet won the last ILSVRC 2017 challenge.
 The idea is to calculate the concolution based on each channel's weight. In that method, the normal convolution is firstly used to calculate the next feature map M. Then, the global average pooling is used on M and form a 1\*1\*C vector. After that, two fully connected layers are used to calculate the weight of each channel and form a 1\*1\*C vector W. Finally, each channel in M will multiply corresponding weight and form the ajusted feature map.
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/senet.png" width="200" alt="SENet architecture">
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/senet1.png" width="300" alt="SENet architecture">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/se.png" width="300" alt="SENet architecture">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/se1.png" width="400" alt="SENet architecture">
 
 **2017\. NAS**
 
@@ -132,14 +132,28 @@ The work is a millstone, which used reinforcement to search the optimal neural n
 
 The work is based on reinforment learning and RNN to form a unfixed length description of network architecture, such as filter number, filter size, activation, skip connection, batch normalization, etc. The evaluation criteria is based on the validation accuracy.
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/nas.png" width="200" alt="NAS">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/nas.png" width="300" alt="NAS">
 
 During training, the agency (RNN or LSTM) produces 100 replicas, and each replica produces 8 architecture samples. After 50 ephochs's training, the performance of samples feedbacks to the agency and updates its parameters. The initial depth of the architecture is 6, the depth will plus 2 after sampling 1600 architecture samples. After sampling 12800 architecture samples, the architecture will be fixed, and grid searching will be used to find the optimal learning rate, weight decay, batch parameter, etc.
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/nas1.png" width="200" alt="NAS">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/nas1.png" width="500" alt="NAS">
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/nas2.png" width="200" alt="NAS architecture">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/nas2.png" width="500" alt="NAS architecture">
 
 Currently, the neural architecture search mainly contains six methods: 1) searching the whole architecture, and after reaching a certain iteration, the network could be deeper; 2) searching the optimal block, and contruct the network by stacking blocks together, such as MnasNet; 3) Contructing a set of architectures and search the optimal network in the set; 4) using graph search method to find the best architecture; 5) using evolutionary algorithm to search the optimal architecture, which means architures will produced and after competition, crossover and variation the architure will be better; 6) projecting the descrete parameters to a continuous space, and use gradient decent to find the optimal solution instead of using polity gradient.
 
+**2019\. EfficientNet**
 
+The work is a state-of-the-art backbone that outperforms other methods.
+
+Ths work is based on several observations: 1) higher input resolution and more channel will bring more fine-grained features; 2) deeper network will bring richer and complex features; 3) the representation of model will improved with the increase of resolution, width (channel) and depth, however, the improvement will reach saturation; 4) the three factors influence each other.
+
+
+Based on these observations, the work firstly find a optimal backbone based on MnasNet, which consists repeated MobileNetV2 and SE blocks. 
+
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/efficientnet2.png" width="400" alt="EfficientNet">
+
+Then, the work focuses on how to rescale the architecture in order to obtain a better representation. The authors bind the multiplication of the square of resolution, width and depth to 2. After that, the author search the best paramters under the contraints. Finally, the author change Φ to pursue a better representation.
+
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/efficientnet.png" width="200" alt="EfficientNet">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/efficientnet1.png" width="200" alt="EfficientNet">
