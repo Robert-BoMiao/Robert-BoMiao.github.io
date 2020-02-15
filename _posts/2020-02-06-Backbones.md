@@ -122,9 +122,9 @@ The work used **Depthwise Separable Convolution** to construct the model, and it
 
 SENet won the last ILSVRC 2017 challenge. The idea of the work is that different channels are not important equally. In that method, the normal convolution was firstly used to calculate the feature map M. Then, the global average pooling was used on M and form a 1\*1\*C vector. After that, two fully connected layers were used to calculate the weight of each channel and form a 1\*1\*C vector W. Finally, each channel in M multiplied by corresponding weight and form the ajusted feature map.
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/se.png" width="300" alt="SENet architecture">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/se.png" width="400" alt="SENet architecture">
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/se1.png" width="250" alt="SENet architecture">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/se1.png" width="300" alt="SENet architecture">
 
 **2017\. NAS**
 
@@ -138,7 +138,7 @@ During training, the agency (RNN or LSTM) produced 100 replicas, and each replic
 
 The initial depth of the architecture was set to 6, the depth was plus 2 after sampling 1600 architecture samples. After sampling 12800 architecture samples, the architecture was fixed, and grid searching was used to find the optimal learning rate, weight decay, batch parameter, etc.
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/nas1.png" width="500" alt="NAS">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/nas1.png" width="600" alt="NAS">
 
 <img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/nas2.png" width="300" alt="NAS architecture">
 
@@ -179,9 +179,9 @@ Like EfficientNet, the work used **MnasNet** as the initial backbone. Then, **Ne
 
 The authors firstly used **1\*1 group convolution** to reduce the dense calculation. They also proposed **channel shuffle** to realize information flow between different groups. Moreover, they found that the benefits of channel shuffle increase with the increase of groups under fixed width.
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/shufflenetv1.png" width="300" alt="channel shuffule">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/shufflenetv1.png" width="400" alt="channel shuffule">
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/shufflenetv11.png" width="300" alt="ShuffleNet V1 Block">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/shufflenetv11.png" width="400" alt="ShuffleNet V1 Block">
 
 **2018\. ShuffleNet V2**
 
@@ -194,4 +194,4 @@ By analyzing the cost of resource, the authors found that: 1) balanced pointwise
 4) the output of bottleneck and skip connection are concatenated with each other to obey 1th rule. Moreoever, channel shuffle is used to make sure information flow.
 5) during downsampling, the channels will not split into two parts. Therefore, the channel number will double in the output, it could obey 4th rule.
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/shufflenetv2.png" width="300" alt="ShuffleNet V2">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/shufflenetv2.png" width="400" alt="ShuffleNet V2">
