@@ -15,7 +15,7 @@ Including VJ, HOG, DPM, SIFT, et al.
 
 # General Parameters
 
-Scale jittering, rotation for data augmentation;
+Scale jittering, rotation, rescale for data augmentation;
 
 Pre-training using Imagenet;
 
@@ -72,7 +72,7 @@ In SPP layer, if we want to project a M\*N feature map into a 4\*4 feature map, 
 
 <img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/fastrcnn1.png" width="300" alt="fastrcnn1">
 
-In the work, the authors make a little change on the process and the feature map of whole image only need to be calculated once. 
+In the work, the authors made a little change on the process and the feature map of whole image only need to be calculated once. 
 
 In reference, the image was fed into selective search algorithm and VGG backbone simultaneously. Then, the proposals from the raw image were projected into the feature map, and ROI Pooling was used to project the feature maps of proposals into a fixed size. Finally, two fully connected layers were used to extract the feature vectors from proposals, and one fully connected layer plus a softmax layer or a regression layer were used to classify and localize the proposals.
 
@@ -102,9 +102,9 @@ This work proposed a method for hard negative mining issue. In this work, propos
 
 **Highlight: Proposal sensitive score map**
 
-In the work, the authors proposed a totally convolutional network. After feature map calculation, proposed proposal sensitive score map was used to solve the redundant calculation issue in previous methods and thus improve the inference speed. 
+In the work, the authors proposed a totally convolutional network. After feature map calculation, proposed proposal sensitive score map was used to solve the redundant calculation issue in previous detection heads and thus could improve the inference speed. 
 
-The proposal sensitive score map has k\*k\*(C+1) channels. In the work, the author define k=9, which means the proposal could be divided into 9 parts (top-left, top-right, etc.). After proposals (calculated by RPN) project into the score map, the proposals will be divided into k identical parts, and the top-left parts will select the corrosponding C+1 channel features at the top-left and change them into a 1\*1\*(C+1) feature map using pooling. Then, a k\*k\*(C+1) feature map will be obtained, and after another pooling, the C+1 dimentional feature vector will be fed into softmax and calculate the results.
+The proposal sensitive score map has k\*k\*(C+1) channels. In the work, the authors defined k=9, which means the proposal could be divided into 9 parts (top-left, top-right, etc.). After proposals (calculated by RPN) projected into the score map, the proposals will be divided into k identical parts, and the top-left parts will select the corrosponding C+1 channel features at the top-left and change them into a 1\*1\*(C+1) feature map using pooling. Then, a k\*k\*(C+1) feature map will be obtained, and after another pooling, the C+1 dimentional feature vector will be fed into softmax in order to calculate the results.
 
 <img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/rfcn1.png" width="500" alt="rfcn">
 
@@ -112,7 +112,7 @@ The proposal sensitive score map has k\*k\*(C+1) channels. In the work, the auth
 
 **Highlight: Proposal sensitive score map with k\*k\*10 channels**
 
-In the work, the authors proposed a proposal sensitive score map like R-FCN. However, the proposed score map only contain k\*k\*10 channels. Therefore, less memory will be needed compared with R-FCN (k\*k\*(C+1)). Finally a fully connected layer was used to extract high-level feature.
+In the work, the authors proposed a proposal sensitive score map like R-FCN. However, the proposed score map only contains k\*k\*10 channels. Therefore, less memory will be needed compared with R-FCN (k\*k\*(C+1)). Finally a fully connected layer was used to extract high-level feature.
 
 <img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/lightheadrcnn.png" width="600" alt="lightheadrcnn">
 
@@ -120,7 +120,7 @@ In the work, the authors proposed a proposal sensitive score map like R-FCN. How
 
 **Highlight: Feature Pyramid ---> Multi-scale-level proposals**
 
-In the work, the authors proposed a feature pyramid network. That method is based on the knowledge that the top layer has more high-level semantic information and the bottom layer haslow-level higher resolution. 
+In the work, the authors proposed a feature pyramid network. That method is based on the knowledge that the top layer has more high-level semantic information and the bottom layer has low-level high-resolution featuress. 
 
 During inference, feature maps with different sizes were firstly calculated, then the bottom layer will merge the information of higher layers. Finally, RPN and detection head of other methods could be used for detection.
 
@@ -134,7 +134,7 @@ In the work, the author proposed ROI Alignment to solve the misalignment issue i
 
 <img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/maskrcnn.png" width="400" alt="maskrcnn">
 
-Moreover, the network is also used for instance segmentation problem, the results shown that optimize the loss of mask prediction can also improve the detection accuracy.
+Moreover, the network was also used for instance segmentation problem, the results shown that optimize the loss of mask prediction could also improve the detection accuracy.
 
 <img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/maskrcnn1.png" width="500" alt="maskrcnn1">
 
@@ -142,7 +142,7 @@ Moreover, the network is also used for instance segmentation problem, the result
 
 **Highlight: Cascade block**
 
-That work mainly focus on the optimization of detection head. The authors found that the detection performance tends to degrade with the increase of threshold. That phenomenon maybe caused by the different thresholds between traning and test. In that case, cascade block can solve this problem. 
+That work mainly focuses on the optimization of detection head. The authors found that the detection performance tends to degrade with the increase of threshold. That phenomenon maybe caused by the different thresholds between traning and test. In that case, cascade block can solve this problem. 
 
 <img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/cascadercnn1.png" width="400" alt="cascadercnn1">
 
@@ -157,7 +157,7 @@ After each prediction the model will be more confident to the positive samples. 
 
 **Highlight: Very fast, end to end**
 
-In that work, GoogLeNet plus 5 extra convolutional layes were used to extract features, and 7\*7\*30 feature map was obtained. The 7\*7\*30 feature map means the image could be divided into 7\*7 parts, each part may contain 2 objects (2 confidence + 8 bbox + 20 classes).
+In the work, GoogLeNet plus 5 extra convolutional layes were used to extract features, and 7\*7\*30 feature map was obtained. The 7\*7\*30 feature map means the image could be divided into 7\*7 parts, and each part may contain 2 objects (2 confidence + 8 bbox + 20 classes).
 
 <img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/yolov1.png" width="600" alt="yolov1">
 
@@ -187,7 +187,7 @@ In the work, VGG and extra convolutional layers were used to calculate feature m
 
 **Highlight: Focal Loss**
 
-The authors found that its complex to select hard samples based on mannual rules in training and the huge number of easy negative samples will exert an adverse impact on the learning. In that case, focal loss could help model by giving more weights to the hard samples and the initialization of bias can solve the problem of different ratio between positive and negative samples.
+The authors found that its complex to select hard samples based on mannual rules in training and the huge number of easy negative samples will exert an adverse impact on the learning. In that case, focal loss could help model by giving more weights to the hard samples and the initialization of bias could solve the problem of different ratio between positive and negative samples.
 
 The folcal loss is calculated as below:
 
@@ -201,7 +201,7 @@ To solve the sample imbalance issue during training, the weights is initialized 
 
 **Highlight: Soft NMS**
 
-Instead of rudely removing highly overlapped proposals, Soft NMS choose the proposals with highest score and reduce the confidence of other overlapped proposals at each iteration.
+Instead of rudely removing highly overlapped proposals, Soft NMS chooses the proposals with highest score and reduces the confidence of other overlapped proposals at each iteration.
 
 <img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/softnms.png" width="300" alt="softnms">
 
@@ -219,7 +219,7 @@ The work is based on the visual principle of Biology. After Combining Inception 
 
 **Highlight: FFM, TUM, SFAM**
 
-The authors aims to let the model learn both multi-level and multi-scale features. In this method, images was firstly fed into a backbone, and two of all feature maps will concatenate into one feature map I. Then I was fed into TUM that like a feature pyramid network. After that, the low-level multi-scale feature maps were obtained. Then, the feature map O with highest resolution was choosen from the low-level multi-scale feature maps. I and O were then concatenated into one feature map through FFM2 and fed into the next TUM. Finally, low&mid&high-level multi-scale feature maps could be obtained, feature maps with same scale will concatenate with each other, and the feature maps were reweighted using the mean value of each channel.
+The authors aimed to let the model learn both multi-level and multi-scale features. In this method, images was firstly fed into a backbone, and two of all feature maps will concatenate into one feature map I. Then I was fed into TUM that like a feature pyramid network. After that, the low-level multi-scale feature maps were obtained. Then, the feature map O with highest resolution was choosen from the low-level multi-scale feature maps. I and O were then concatenated into one feature map through FFM2 and fed into the next TUM. Finally, low&mid & high-level multi-scale feature maps were obtained, feature maps with same scale were concatenated with each other, and the feature maps were reweighted using the mean value of each channel (SE module).
 
 <img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/m2det.png" width="600" alt="m2det">
 
