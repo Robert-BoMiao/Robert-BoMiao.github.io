@@ -124,7 +124,7 @@ SENet won the last ILSVRC 2017 challenge.
 The idea is to calculate the concolution based on each channel's weight. In that method, the normal convolution is firstly used to calculate the next feature map M. Then, the global average pooling is used on M and form a 1\*1\*C vector. After that, two fully connected layers are used to calculate the weight of each channel and form a 1\*1\*C vector W. Finally, each channel in M will multiply corresponding weight and form the ajusted feature map.
 
 <img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/se.png" width="300" alt="SENet architecture">
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/se1.png" width="400" alt="SENet architecture">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/se1.png" width="200" alt="SENet architecture">
 
 **2017\. NAS**
 
@@ -138,7 +138,7 @@ During training, the agency (RNN or LSTM) produces 100 replicas, and each replic
 
 <img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/nas1.png" width="500" alt="NAS">
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/nas2.png" width="500" alt="NAS architecture">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/nas2.png" width="300" alt="NAS architecture">
 
 Currently, the neural architecture search mainly contains six methods: 1) searching the whole architecture, and after reaching a certain iteration, the network could be deeper; 2) searching the optimal block, and contruct the network by stacking blocks together, such as MnasNet; 3) Contructing a set of architectures and search the optimal network in the set; 4) using graph search method to find the best architecture; 5) using evolutionary algorithm to search the optimal architecture, which means architures will produced and after competition, crossover and variation the architure will be better; 6) projecting the descrete parameters to a continuous space, and use gradient decent to find the optimal solution instead of using polity gradient.
 
@@ -155,5 +155,5 @@ Based on these observations, the work firstly find a optimal backbone based on M
 
 Then, the work focuses on how to rescale the architecture in order to obtain a better representation. The authors bind the multiplication of the square of resolution, width and depth to 2. After that, the author search the best paramters under the contraints. Finally, the author change Φ to pursue a better representation.
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/efficientnet.png" width="200" alt="EfficientNet">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/efficientnet.png" width="300" alt="EfficientNet">
 <img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/efficientnet1.png" width="200" alt="EfficientNet">
