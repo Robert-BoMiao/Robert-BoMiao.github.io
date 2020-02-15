@@ -100,15 +100,15 @@ Based on the work of resnet, the work achieved **indentity mapping** using a new
 
 The work introduced dense block. In a dense block, the **later layers have identity mapping with all the previous layers**, and the multi-layer's features were concatenated with each other.
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/densenet.png" width="600" alt="DenseNet architecture">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/densenet.png" width="700" alt="DenseNet architecture">
 
 **2017\. ResNeXt**
 
 The work proposed an extra dimention called **cardinality**, which means the block could be constructed based on multiple parallel bottlenecks. This structure could improve model's expressive ability. The authors used **Group Convolution** to achieve this idea, and the best parameters are width 4 and cardinality 32.
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/groupconvolution.png" width="300" alt="Group Convolution">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/groupconvolution.png" width="400" alt="Group Convolution">
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/resnext.png" width="500" alt="ResNeXt architecture">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/resnext.png" width="600" alt="ResNeXt architecture">
 
 **2017\. Xception**
 
@@ -116,15 +116,15 @@ The work used **Depthwise Separable Convolution** to construct the model, and it
 
 <img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/dsc.png" width="300" alt="Depthwise Separable Convolution">
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/xception.png" width="600" alt="xception architecture">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/xception.png" width="700" alt="xception architecture">
 
 **2017\. SENet**
 
-SENet won the last ILSVRC 2017 challenge.
-The idea of the work is that different channels are not important equally. In that method, the normal convolution was firstly used to calculate the feature map M. Then, the global average pooling was used on M and form a 1\*1\*C vector. After that, two fully connected layers were used to calculate the weight of each channel and form a 1\*1\*C vector W. Finally, each channel in M multiplied by corresponding weight and form the ajusted feature map.
+SENet won the last ILSVRC 2017 challenge. The idea of the work is that different channels are not important equally. In that method, the normal convolution was firstly used to calculate the feature map M. Then, the global average pooling was used on M and form a 1\*1\*C vector. After that, two fully connected layers were used to calculate the weight of each channel and form a 1\*1\*C vector W. Finally, each channel in M multiplied by corresponding weight and form the ajusted feature map.
 
 <img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/se.png" width="300" alt="SENet architecture">
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/se1.png" width="200" alt="SENet architecture">
+
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/se1.png" width="250" alt="SENet architecture">
 
 **2017\. NAS**
 
@@ -179,7 +179,7 @@ Like EfficientNet, the work used **MnasNet** as the initial backbone. Then, **Ne
 
 The authors firstly used **1\*1 group convolution** to reduce the dense calculation. They also proposed **channel shuffle** to realize information flow between different groups. Moreover, they found that the benefits of channel shuffle increase with the increase of groups under fixed width.
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/shufflenetv1.png" width="200" alt="channel shuffule">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/shufflenetv1.png" width="300" alt="channel shuffule">
 
 <img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/shufflenetv11.png" width="300" alt="ShuffleNet V1 Block">
 
