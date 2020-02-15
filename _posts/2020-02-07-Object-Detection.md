@@ -7,7 +7,9 @@ tags:
   - Object Detection
 ---
 
-Before 2013\. Traditional
+**This is a brief description of well known backbones, which can help people remember the knowledge.**
+
+**Before 2013\. Traditional**
 
 Including VJ, HOG, DPM, SIFT, et al.
 
@@ -42,7 +44,7 @@ Non maximum suppression (NMS) for removing highly overlapped proposals;
 
 **Highlight: Selective search && Pre-training**
 
-This is a milestone in object detection. In that work, proposals was firstly been calculated using selective search. The process of selective search is shown below. 
+This is a milestone in object detection. In the work, proposals was firstly been calculated using selective search. The process of selective search is shown below. 
 
 <img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/selectivesearch.png" width="400" alt="selectivesearch">
 <!-- ![AlexNet architecture](https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/alexnet.png)
@@ -70,7 +72,7 @@ In SPP layer, if we want to project a M\*N feature map into a 4\*4 feature map, 
 
 <img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/fastrcnn1.png" width="300" alt="fastrcnn1">
 
-In that work, the authors make a little change on the process and the feature map of whole image only need to be calculated once. 
+In the work, the authors make a little change on the process and the feature map of whole image only need to be calculated once. 
 
 In reference, the image was fed into selective search algorithm and VGG backbone simultaneously. Then, the proposals from the raw image were projected into the feature map, and ROI Pooling was used to project the feature maps of proposals into a fixed size. Finally, two fully connected layers were used to extract the feature vectors from proposals, and one fully connected layer plus a softmax layer or a regression layer were used to classify and localize the proposals.
 
@@ -80,7 +82,7 @@ In reference, the image was fed into selective search algorithm and VGG backbone
 
 **Highlight: Region proposal network**
 
-In that work, the authors used region proposal network (RPN) to replace the selective search for proposal mining, and realized an end-to-end network. 
+In the work, the authors used region proposal network (RPN) to replace the selective search for proposal mining, and realized an end-to-end network. 
 
 <img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/fasterrcnn.png" width="400" alt="fasterrcnn">
 
@@ -100,9 +102,9 @@ This work proposed a method for hard negative mining issue. In this work, propos
 
 **Highlight: Proposal sensitive score map**
 
-In that work, the authors proposed a totally convolutional network. After feature map calculation, proposed proposal sensitive score map was used to solve the redundant calculation issue in previous methods and thus improve the inference speed. 
+In the work, the authors proposed a totally convolutional network. After feature map calculation, proposed proposal sensitive score map was used to solve the redundant calculation issue in previous methods and thus improve the inference speed. 
 
-The proposal sensitive score map has k\*k\*(C+1) channels. In that work, the author define k=9, which means the proposal could be divided into 9 parts (top-left, top-right, etc.). After proposals (calculated by RPN) project into the score map, the proposals will be divided into k identical parts, and the top-left parts will select the corrosponding C+1 channel features at the top-left and change them into a 1\*1\*(C+1) feature map using pooling. Then, a k\*k\*(C+1) feature map will be obtained, and after another pooling, the C+1 dimentional feature vector will be fed into softmax and calculate the results.
+The proposal sensitive score map has k\*k\*(C+1) channels. In the work, the author define k=9, which means the proposal could be divided into 9 parts (top-left, top-right, etc.). After proposals (calculated by RPN) project into the score map, the proposals will be divided into k identical parts, and the top-left parts will select the corrosponding C+1 channel features at the top-left and change them into a 1\*1\*(C+1) feature map using pooling. Then, a k\*k\*(C+1) feature map will be obtained, and after another pooling, the C+1 dimentional feature vector will be fed into softmax and calculate the results.
 
 <img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/rfcn1.png" width="500" alt="rfcn">
 
@@ -110,7 +112,7 @@ The proposal sensitive score map has k\*k\*(C+1) channels. In that work, the aut
 
 **Highlight: Proposal sensitive score map with k\*k\*10 channels**
 
-In that work, the authors proposed a proposal sensitive score map like R-FCN. However, the proposed score map only contain k\*k\*10 channels. Therefore, less memory will be needed compared with R-FCN (k\*k\*(C+1)). Finally a fully connected layer was used to extract high-level feature.
+In the work, the authors proposed a proposal sensitive score map like R-FCN. However, the proposed score map only contain k\*k\*10 channels. Therefore, less memory will be needed compared with R-FCN (k\*k\*(C+1)). Finally a fully connected layer was used to extract high-level feature.
 
 <img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/lightheadrcnn.png" width="600" alt="lightheadrcnn">
 
@@ -118,7 +120,7 @@ In that work, the authors proposed a proposal sensitive score map like R-FCN. Ho
 
 **Highlight: Feature Pyramid ---> Multi-scale-level proposals**
 
-In that work, the authors proposed a feature pyramid network. That method is based on the knowledge that the top layer has more high-level semantic information and the bottom layer haslow-level higher resolution. 
+In the work, the authors proposed a feature pyramid network. That method is based on the knowledge that the top layer has more high-level semantic information and the bottom layer haslow-level higher resolution. 
 
 During inference, feature maps with different sizes were firstly calculated, then the bottom layer will merge the information of higher layers. Finally, RPN and detection head of other methods could be used for detection.
 
@@ -128,7 +130,7 @@ During inference, feature maps with different sizes were firstly calculated, the
 
 **Highlight: ROI Align && Mask prediction && Class+BBox+Mask Loss**
 
-In that work, the author proposed ROI Alignment to solve the misalignment issue in ROI Pooling. ROI alignment is based on bilinear interpolation. The process of ROI alignment is shown as below.
+In the work, the author proposed ROI Alignment to solve the misalignment issue in ROI Pooling. ROI alignment is based on bilinear interpolation. The process of ROI alignment is shown as below.
 
 <img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/maskrcnn.png" width="400" alt="maskrcnn">
 
@@ -177,7 +179,7 @@ The final 7\*7\*125 feature map represents 7\*7 parts, each part may contain 5 a
 
 **Highlight: Multi-scale feature maps, Default anchors**
 
-In that work, VGG and extra convolutional layers were used to calculate feature maps at different resolution. Then, the chosen 6 layers were used for detection.
+In the work, VGG and extra convolutional layers were used to calculate feature maps at different resolution. Then, the chosen 6 layers were used for detection.
 
 <img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/ssd.png" width="600" alt="ssd">
 
@@ -207,7 +209,7 @@ Instead of rudely removing highly overlapped proposals, Soft NMS choose the prop
 
 **Highlight: Inception block, dialated convolution and pooling**
 
-This work is based on the visual principle of Biology. After Combining Inception block with dilated convolution, the recptive field that obey the visual principle was obtained. Then, detection was finished using multi-scale feature maps.
+The work is based on the visual principle of Biology. After Combining Inception block with dilated convolution, the recptive field that obey the visual principle was obtained. Then, detection was finished using multi-scale feature maps.
 
 <img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/object_detection/rfbnet.png" width="400" alt="rfbnet">
 
