@@ -144,16 +144,52 @@ Currently, the neural architecture search mainly contains six methods: 1) search
 
 **2019\. EfficientNet**
 
-The work is a state-of-the-art backbone that outperforms other methods.
+The work is a state-of-the-art backbone that outperforms other methods. Its idea is based on several observations: 1) higher input resolution and more channels will bring more fine-grained features; 2) deeper network will bring richer and complex features; 3) the representation of model will improved with the increase of resolution, width (channel) and depth, however, the improvement will reach saturation; 4) the three factors could influence each other.
 
-Ths work is based on several observations: 1) higher input resolution and more channel will bring more fine-grained features; 2) deeper network will bring richer and complex features; 3) the representation of model will improved with the increase of resolution, width (channel) and depth, however, the improvement will reach saturation; 4) the three factors influence each other.
-
-
-Based on these observations, the work firstly find a optimal backbone based on MnasNet, which consists repeated MobileNetV2 and SE blocks. 
+Based on these observations, the work firstly find a optimal backbone based on MnasNet, which consists of repeated MobileNetV2 and SE blocks. 
 
 <img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/efficientnet2.png" width="400" alt="EfficientNet">
 
-Then, the work focuses on how to rescale the architecture in order to obtain a better representation. The authors bind the multiplication of the square of resolution, width and depth to 2. After that, the author search the best paramters under the contraints. Finally, the author change Φ to pursue a better representation.
+Then, the work focuses on how to rescale the architecture in order to obtain a better representation. The authors bind the multiplication of the square of resolution, width and depth to 2. After that, the authors search the best parameters under the contraints and fix them. Finally, the authors change Φ to pursue a better representation.
 
 <img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/efficientnet.png" width="300" alt="EfficientNet">
 <img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/efficientnet1.png" width="200" alt="EfficientNet">
+
+**2017\. MobileNet V1**
+
+The network architecture is similiar to Xception, the difference is that MobileNet V1 does not contain skip connection and the **depthwise sperable convolution** in MobileNet V1 has two activations. MobileNet V1 is also **compressible** since it has parameters α and β to control the channel number and input image size, respectively.
+
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/mobilenetv1.png" width="200" alt="MobileNet V1">
+
+**2018\. MobileNet V2**
+
+The blocks (**inverted residuals**) of the work is somehow like ResNeXt and ShuffleNet V1. MobileNet V2 contains skip connection, and it uses the first 1\*1 convolution (expansion layer) to upgrade the channel number in order to prevent information lost caused by activation. Moreover, the authors use **ReLU6** in the work because of its robustness in low-precision computation.
+
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/mobilenetv2.png" width="300" alt="MobileNet V2">
+
+**2019\. MobileNet V3**
+
+Like EfficientNet, the work uses **MnasNet** as the initial backbone. Then, **NetAdapt** is used to optimze the initial backbone based on the goal of latency. NetAdapt firstly proposes several samples based on the contraint that new samples should have less lantency compared with initial samples, and these sample networks are then fine-tuned for several epochs. Based on the evaluation function argmax[ΔAcc/ΔLatency], the best model is chosen. Finally, the model is trained from scratch. The work also used **Hswish** as the activation function.
+
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/mobilenetv3.png" width="300" alt="MobileNet V3">
+
+**2017\. ShuffleNet V1**
+
+The authors firstly used 1\*1 group convolution to reduce the dense calculation. They also proposed **channel shuffle** to realize information flow between different groups. Moreover, they found that the benefits of channel shuffle increase with the increase of groups under fixed width.
+
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/shufflenetv1.png" width="200" alt="channel shuffule">
+
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/shufflenetv11.png" width="300" alt="ShuffleNet V1 Block">
+
+**2018\. ShuffleNet V2**
+
+The work firstly pointed out that the traditional FLOPs evaluation method is not enough for model evaluation because it does not consider the memory access cost and platform. In that case, evaluation such as inference time should be used to evaluate the models.
+
+By analyzing the cost of resource, the authors found that: 1) balanced pointwise convolution channel (1:1) between input and output could reduce MAC; 2) too much group convolution will increase MAC; 3) Two much fragments (groupds) will reduce parallelism; 4) Element-wise operation will cost time, such as shortcut connection and ReLU. Based on these observations, the author proposed a new block.
+1) Each unit will cut the channel input two equal parts in the input, one is used for shortcut connection, and the other is used for convolution. Therefore, the outputs will concatenate with each other and it could obey the 4th rule.
+2) 1\*1 is no longer used to obey 2th rule.
+3) channel numbers of input and output are same in each unit to obey 1th rule.
+4) the output of bottleneck and skip connection concatenated with each other to obey 1th rule. Moreoever, channel shuffle is used to make sure information flow.
+5) during downsampling, the channels will not split into two parts. Therefore, the channel number will double in the output that can obey 4th rule.
+
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/shufflenetv2.png" width="300" alt="ShuffleNet V2">
