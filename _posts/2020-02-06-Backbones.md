@@ -167,7 +167,7 @@ The network architecture is similiar to Xception, the difference is that MobileN
 
 The blocks (**inverted residuals**) of the work is somehow like ResNeXt and ShuffleNet V1. MobileNet V2 contains skip connection, and it used the first 1\*1 convolution (expansion layer) to upgrade the channel number in order to prevent information lost caused by activation. Moreover, the authors used **ReLU6** in the work because of its robustness in low-precision computation.
 
-<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/mobilenetv2.png" width="300" alt="MobileNet V2">
+<img src="https://raw.githubusercontent.com/Robert-BoMiao/Robert-BoMiao.github.io/master/images/blog_images/mobilenetv2.png" width="200" alt="MobileNet V2">
 
 **2019\. MobileNet V3**
 
