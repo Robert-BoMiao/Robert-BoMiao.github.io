@@ -19,6 +19,10 @@ Work experience
 * 07/2018: Algorithm Engineer
   * Sina Com Technology (China) Co. LTD
   * Duties included: Recommender System, Data Mining
+ 
+* 05/2020: Research Assistant
+  * The Chinese University of Hong Kong, Shenzhen
+  * Duties included: Computer Vision
 
 Publications
 ======
